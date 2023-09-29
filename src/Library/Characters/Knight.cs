@@ -2,20 +2,16 @@ namespace RoleplayGame
 {
     public class Knight : Character
     {
-        public Knight(string name) : base(name) { }
-
-        public Sword Sword { get; set; }
-
-        public Shield Shield { get; set; }
-
-        public Armor Armor { get; set; }
-
-        public int AttackValue
+        public NonMagicItem Item { get; set; }
+        public int DefenseValue { get; set; }
+        public int AttackValue { get; set; }
+        public Knight(string name, int attackValue, int defenseValue, NonMagicItem item) : base(name)
         {
-            get
-            {
-                return Sword.AttackValue;
-            }
+            this.Name = name;
+            this.DefenseValue = defenseValue;
+            this.AttackValue = attackValue;
+            this.Item = item;
+
         }
 
         public override void ReceiveAttack(int power)
@@ -26,13 +22,7 @@ namespace RoleplayGame
             }
         }
 
-        public int DefenseValue
-        {
-            get
-            {
-                return Armor.DefenseValue + Shield.DefenseValue;
-            }
-        }
+
 
 
 

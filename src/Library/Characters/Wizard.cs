@@ -11,14 +11,6 @@ namespace RoleplayGame
         }
         public SpellsBook SpellsBook { get; set; }
 
-        public int AttackValue
-        {
-            get
-            {
-                return SpellsBook.AttackValue + Staff.AttackValue;
-            }
-        }
-
         public override void ReceiveAttack(int power)
         {
             if (this.DefenseValue < power)
@@ -31,7 +23,7 @@ namespace RoleplayGame
         {
             get
             {
-                return SpellsBook.DefenseValue + Staff.DefenseValue;
+                return SpellsBook.DefenseValue + this.Item.DefenseValue;
             }
         }
 
