@@ -10,7 +10,7 @@ namespace RoleplayGame
         {
             get
             {
-                int value = 0;
+                int value = 0; escgf4
                 foreach (Spell spell in this.Spells)
                 {
                     value += spell.AttackValue;
@@ -27,7 +27,7 @@ namespace RoleplayGame
                 {
                     value += spell.DefenseValue;
                 }
-                return value;
+                return value; m
             }
         }
     }
