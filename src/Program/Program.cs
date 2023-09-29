@@ -5,19 +5,23 @@ namespace Program
 {
     class Program
     {
-        static void Main(string[] args)
+        static async void Main(string[] args)
         {
             SpellsBook book = new SpellsBook();
-            book.Spells = new Spell[]{ new Spell() };
+            book.Spells = new Spell[] { new Spell() };
 
             Wizard gandalf = new Wizard("Gandalf");
-            gandalf.Staff = new Staff();
+            MagicItem Staff = new MagicItem(230, 0);
             gandalf.SpellsBook = book;
 
             Dwarf gimli = new Dwarf("Gimli");
-            gimli.Axe = new Axe();
-            gimli.Helmet = new Helmet();
-            gimli.Shield = new Shield();
+            NonMagicItem axe = new NonMagicItem(400, true);
+            NonMagicItem helmet = new NonMagicItem(100, false);
+            NonMagicItem shield = new NonMagicItem(500, false);
+
+            NonMagicItem sword = new NonMagicItem(100, true);
+
+            Console.WriteLine(sword.AttackValue);
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
             Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");

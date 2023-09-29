@@ -5,7 +5,7 @@ namespace RoleplayGame
     public class SpellsBook
     {
         public Spell[] Spells { get; set; }
-        
+
         public int AttackValue
         {
             get
@@ -18,7 +18,6 @@ namespace RoleplayGame
                 return value;
             }
         }
-
         public int DefenseValue
         {
             get

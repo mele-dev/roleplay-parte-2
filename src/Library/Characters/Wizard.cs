@@ -1,25 +1,29 @@
 namespace RoleplayGame
 {
-    public class Wizard
+    public class Wizard : Character
     {
-        private int health = 100;
-
-        public Wizard(string name)
+        public MagicItem Item { get; set; }
+        public int AttackValue { get; set; }
+        public Wizard(string name, MagicItem item, int attackValue) : base(name)
         {
-            this.Name = name;
+            this.Item = item;
+            this.AttackValue = attackValue + item.AttackValue;
         }
-
-        public string Name { get; set; }
-
         public SpellsBook SpellsBook { get; set; }
-
-        public Staff Staff { get; set; }
 
         public int AttackValue
         {
             get
             {
                 return SpellsBook.AttackValue + Staff.AttackValue;
+            }
+        }
+
+        public override void ReceiveAttack(int power)
+        {
+            if (this.DefenseValue < power)
+            {
+                this.Health -= power - this.DefenseValue;
             }
         }
 
@@ -31,29 +35,6 @@ namespace RoleplayGame
             }
         }
 
-        public int Health
-        {
-            get
-            {
-                return this.health;
-            }
-            private set
-            {
-                this.health = value < 0 ? 0 : value;
-            }
-        }
 
-        public void ReceiveAttack(int power)
-        {
-            if (this.DefenseValue < power)
-            {
-                this.Health -= power - this.DefenseValue;
-            }
-        }
-
-        public void Cure()
-        {
-            this.Health = 100;
-        }
     }
 }
