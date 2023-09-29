@@ -2,25 +2,20 @@ namespace RoleplayGame
 {
     public class Archer : Character
     {
-        public Archer(string name) : base(name) { }
-
-        public Bow Bow { get; set; }
-
-        public Helmet Helmet { get; set; }
-
-        public int AttackValue
+        public NonMagicItem item { get; set; }
+        public int AttackValue { get; set; }
+        public Archer(string name, int attackValue, NonMagicItem item) : base(name)
         {
-            get
-            {
-                return Bow.AttackValue;
-            }
+            this.Name = name;
+            this.AttackValue = attackValue;
+            this.item = item;
         }
 
         public int DefenseValue
         {
             get
             {
-                return Helmet.DefenseValue;
+                return this.item.DefenseValue;
             }
         }
 
