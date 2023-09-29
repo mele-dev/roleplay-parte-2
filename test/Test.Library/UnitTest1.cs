@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using RoleplayGame;
 
 namespace Library.Test
 {
@@ -7,10 +8,10 @@ namespace Library.Test
         [Test]
         public void Test1()
         {
-            // NonMagicItem sword = new NonMagicItem(100, true);
+            NonMagicItem sword = new NonMagicItem(100, true);
 
 
-            // Assert.AreEqual(sword.AttackValue, 100);
+            Assert.AreEqual(sword.AttackValue, 100);
         }
     }
 }
