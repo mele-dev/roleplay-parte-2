@@ -21,6 +21,7 @@ public abstract class Character
             this.health = value < 0 ? 0 : value;
         }
     }
+    // todos tienen cure
     public void Cure()
     {
         this.Health = 100;

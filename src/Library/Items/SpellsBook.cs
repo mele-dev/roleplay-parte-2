@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class SpellsBook
+    public class SpellsBook // : MagicItem
     {
         public Spell[] Spells { get; set; }
 
@@ -10,7 +10,7 @@ namespace RoleplayGame
         {
             get
             {
-                int value = 0; escgf4
+                int value = 0;
                 foreach (Spell spell in this.Spells)
                 {
                     value += spell.AttackValue;
@@ -27,7 +27,7 @@ namespace RoleplayGame
                 {
                     value += spell.DefenseValue;
                 }
-                return value; m
+                return value;
             }
         }
     }

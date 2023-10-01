@@ -26,5 +26,27 @@ namespace RoleplayGame
                 this.Health -= power - this.DefenseValue;
             }
         }
+
+        /* public int AttackValue
+        {
+            get
+            {
+                return Bow.AttackValue;
+            }
+        } */
+
+        public int Health
+        {
+            get
+            {
+                return this.health;
+            }
+            private set
+            {
+                this.health = value < 0 ? 0 : value;
+            }
+        }
+
     }
+
 }

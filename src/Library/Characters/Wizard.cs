@@ -19,6 +19,14 @@ namespace RoleplayGame
             }
         }
 
+        public int AttackValue
+        {
+            get
+            {
+                return SpellsBook.AttackValue + Item.AttackValue;
+            }
+        }
+
         public int DefenseValue
         {
             get
