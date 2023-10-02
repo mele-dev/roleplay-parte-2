@@ -14,8 +14,5 @@ namespace RoleplayGame
             else
                 this.DefenseValue = value;
         }
-
-
-
     }
 }
