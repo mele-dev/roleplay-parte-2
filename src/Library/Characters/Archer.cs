@@ -7,19 +7,18 @@ namespace RoleplayGame
         {
         }
 
-        public int DefenseValue
-        {
-            get
-            {
-                return this.Item.DefenseValue;
-            }
-        }
-
         public int AttackValue
         {
             get
             {
-                return this.Item.AttackValue;
+                return Item.AttackValue += Item?.AttackValue ?? 0;
+            }
+        }
+        public int DefenseValue
+        {
+            get
+            {
+                return Item.DefenseValue += Item?.DefenseValue ?? 0;
             }
         }
 
@@ -29,6 +28,8 @@ namespace RoleplayGame
             {
                 this.Health -= power - this.DefenseValue;
             }
+            else
+                this.Health = 0;
         }
     }
 }
