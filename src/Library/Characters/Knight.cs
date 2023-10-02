@@ -24,9 +24,9 @@ namespace RoleplayGame
         public override void ReceiveAttack(int power)
         {
             if (this.DefenseValue < power)
-            {
                 this.Health -= power - this.DefenseValue;
-            }
+            else
+                this.Health = 0;
         }
 
     }
