@@ -9,4 +9,5 @@ public class MagicItem
         this.AttackValue = attackValue;
         this.DefenseValue = defenseValue;
     }
+
 }

@@ -15,13 +15,7 @@ namespace RoleplayGame
                 this.DefenseValue = value;
         }
 
-        public void ValidateItem()
-        {
-            if (this.AttackValue > 0 && this.DefenseValue > 0)
-            {
-                throw new Exception("Uno de los dos valores debe ser 0.");
-            }
-        }
+
 
     }
 }

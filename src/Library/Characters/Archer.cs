@@ -2,20 +2,24 @@ namespace RoleplayGame
 {
     public class Archer : Character
     {
-        public NonMagicItem item { get; set; }
-        public int AttackValue { get; set; }
-        public Archer(string name, int attackValue, NonMagicItem item) : base(name)
+        public NonMagicItem Item { get; set; }
+        public Archer(string name) : base(name)
         {
-            this.Name = name;
-            this.AttackValue = attackValue;
-            this.item = item;
         }
 
         public int DefenseValue
         {
             get
             {
-                return this.item.DefenseValue;
+                return this.Item.DefenseValue;
+            }
+        }
+
+        public int AttackValue
+        {
+            get
+            {
+                return this.Item.AttackValue;
             }
         }
 
@@ -26,27 +30,5 @@ namespace RoleplayGame
                 this.Health -= power - this.DefenseValue;
             }
         }
-
-        /* public int AttackValue
-        {
-            get
-            {
-                return Bow.AttackValue;
-            }
-        } */
-
-        public int Health
-        {
-            get
-            {
-                return this.health;
-            }
-            private set
-            {
-                this.health = value < 0 ? 0 : value;
-            }
-        }
-
     }
-
 }

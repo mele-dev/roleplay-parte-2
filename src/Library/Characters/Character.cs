@@ -2,7 +2,7 @@ namespace RoleplayGame;
 
 public abstract class Character
 {
-    public int health = 100;
+    private int health = 100;
     public string Name { get; set; }
 
     public Character(string name)
@@ -26,6 +26,5 @@ public abstract class Character
     {
         this.Health = 100;
     }
-
 
 }
